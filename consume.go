@@ -134,6 +134,14 @@ func (consumer *Consumer) Close() {
 
 }
 
+func (consumer *Consumer) GetChanManager() *channelmanager.ChannelManager {
+	return consumer.chanManager
+}
+
+func (consumer *Consumer) GetOptions() ConsumerOptions {
+	return consumer.options
+}
+
 func (consumer *Consumer) cleanupResources() {
 	consumer.isClosedMu.Lock()
 	defer consumer.isClosedMu.Unlock()

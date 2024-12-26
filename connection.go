@@ -88,3 +88,7 @@ func (conn *Conn) Close() error {
 	conn.closeConnectionToManagerCh <- struct{}{}
 	return conn.connectionManager.Close()
 }
+
+func (conn *Conn) GetConnectionManager() *connectionmanager.ConnectionManager {
+	return conn.connectionManager
+}
